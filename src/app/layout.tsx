@@ -1,3 +1,4 @@
+import Header from './components/header'
 import './globals.css'
 import { Rubik } from 'next/font/google'
 
@@ -15,7 +16,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={rubik.className}>{children}</body>
+      <body className={rubik.className}>
+        <Header />
+        {children}
+      </body>
     </html>
   )
 }

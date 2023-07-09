@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from "react";
-import { District } from "./page";
+import { District, HotdogStand } from "./page";
 import PocketBase from 'pocketbase';
 
 export default function District() {
@@ -9,13 +9,16 @@ export default function District() {
 
     const [districts, setDistricts] = useState([] as District[])
     const fetchData = async () => {
-        const response = await pb.collection('districts').getFullList() as District[];
+        const response = await pb.collection('districts').getFullList({
+            expand: 'hotdog_stands'
+        }) as District[];
         return response;
     }
 
     useEffect(() => {
         fetchData()
             .then((res) => {
+                console.log(res)
                 setDistricts(res);
             })
             .catch((e) => {
@@ -24,12 +27,16 @@ export default function District() {
     }, [])
 
     return (
-        <div className="flex flex-column justify-between">
-            {districts.map((item: District) => (
-                <div key={item.id} className="flex flex-column">
-                    <a href="#" className="hover:underline">{item.district}_{item.district_name}</a>
-                </div>
+        <ul className='flex flex-row space-x-2 py-4'>
+            {districts.filter(function (district) {
+                return district.hotdog_stands.length > 0;
+            }).map((district: District) => (
+                <li>
+                    <button className="button" key={district.id}>
+                        {district.district}_{district.district_name}
+                    </button>
+                </li>
             ))}
-        </div>
+        </ul>
     )
 }

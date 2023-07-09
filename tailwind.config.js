@@ -7,12 +7,17 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'gradient-135': 'linear-gradient(135deg, var(--tw-gradient-stops))',
+      backgroundColor: {
+        'vermilion-500': '#db3c26',
+        'vermilion-300': '#e98a7d',
+        'vermilion-100': '#fbece9',
+        'whiteanqtique-500': '#ffe6d9',
+        'pastellblue-500': '#56b8cf',
       },
+      textColor: {
+        'vermilion-500': '#db3c26',
+        'whiteanqtique-500': '#ffe6d9',
+      }
     },
   },
   plugins: [],
