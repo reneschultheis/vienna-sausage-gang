@@ -20,7 +20,6 @@ export interface HotdogStand {
 }
 
 export default function Home() {
-
   return (
     <main className="w-screen flex flex-column justify-center bg-vermilion-500 bg-opacity-60">
       <div className="flex flex-col-reverse lg:flex-row w-full">
