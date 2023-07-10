@@ -1,3 +1,4 @@
+import Footer from './components/footer'
 import Header from './components/header'
 import './globals.css'
 import { Rubik } from 'next/font/google'
@@ -19,6 +20,7 @@ export default function RootLayout({
       <body className={rubik.className}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   )

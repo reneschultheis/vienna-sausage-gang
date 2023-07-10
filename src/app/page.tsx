@@ -1,9 +1,6 @@
 import Image from 'next/image';
 import data from '../../public/data.json';
-import PocketBase from 'pocketbase';
-import { useState, useEffect } from 'react';
 import District from './districts';
-import { MdOutlineSearchOff, MdOutlineSearch } from 'react-icons/md';
 import SearchField from './searchfield';
 
 export interface District {
@@ -21,35 +18,53 @@ export interface HotdogStand {
 
 export default function Home() {
   return (
-    <main className="w-screen flex flex-column justify-center bg-vermilion-500 bg-opacity-60">
-      <div className="flex flex-col-reverse lg:flex-row w-full">
-        <div className="flex w-3/4">
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 w-full">
-          {data.hotdog_stands.map(stand => (
-            <a key={stand.name} href="#" className="block md:w-sm p-6 bg-vermilion-100 shadow-lg rounded-lg">
-              <h5 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white">{stand.name}</h5>
-              <p className="font-normal">Location: {stand.location}</p>
-              <p className="font-normal">Review: {stand.review}</p>
-              <div className="flex flex-row space-x-2 mt-4">
-                {stand.gluten_free_options && <div className="rounded-full bg-lime-600 p-2"><Image
-                  priority
-                  src="/icons/wheat.svg"
-                  height={18}
-                  width={18}
-                  alt="Glutenfree options available"
-                /></div>}
-                {stand.vegan_options && <div className="rounded-full bg-lime-600 p-2"><Image
-                  src="/icons/vegan.svg"
-                  height={18}
-                  width={18}
-                  alt="Vegan options available"
-                /></div>}
-              </div>
-            </a>))}
+    <main className="w-screen flex flex-column justify-center bg-tumbleweed-500">
+      <div className="flex flex-col-reverse lg:flex-row w-full py-8">
+        <div className="flex w-full lg:w-3/4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 lg:gap-4 w-full p-2 lg:p-4">
+            {data.hotdog_stands.map(stand => (
+              <a key={stand.name} href="#" className="block p-4 w-full bg-vermilion-100 shadow-lg rounded-lg">
+                <div className='flex flex-1 justify-center w-full h-auto relative rounded-md'>
+                  <Image
+                    alt=''
+                    src="/../public/wienerwurstelstand.jpg"
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    className='w-full max-h-44 rounded-md object-cover'
+                  />
+                </div>
+                <div className='my-4'>
+                  <div className="flex flex-row space-x-2 mt-4">
+                    <div className='flex flex-1 flex-row mb-2 justify-between'>
+                      <h5 className="text-2xl font-bold text-gray-900 dark:text-white">{stand.name}</h5>
+                      <div className='flex flex-row space-x-2'>
+                        {stand.gluten_free_options && <div className="rounded-full bg-lime-600 p-2"><Image
+                        priority
+                        src="/icons/wheat.svg"
+                        height={18}
+                        width={18}
+                        alt="Glutenfree options available"
+                      /></div>}
+                        {stand.vegan_options && <div className="rounded-full bg-lime-600 p-2"><Image
+                          src="/icons/vegan.svg"
+                          height={18}
+                          width={18}
+                          alt="Vegan options available"
+                        /></div>}
+                      </div>
+                    </div>
+                  </div>
+
+                  <p className="font-normal">Location: {stand.location}</p>
+                  <p className="font-normal">Review: {stand.review}</p>
+
+                </div>
+              </a>))}
+          </div>
         </div>
-        </div>
-        <div className="flex w-1/4">
-        <District /></div>
+        <div className="flex w-1/4 px-2">
+          <District /></div>
       </div>
       <div className="md:w-3/4 hidden w-screen m-2 sm:m-0">
         <div className="w-full flex justify-center my-10">

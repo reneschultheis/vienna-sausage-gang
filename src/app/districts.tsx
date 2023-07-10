@@ -18,7 +18,6 @@ export default function District() {
     useEffect(() => {
         fetchData()
             .then((res) => {
-                console.log(res)
                 setDistricts(res);
             })
             .catch((e) => {
@@ -31,7 +30,7 @@ export default function District() {
             {districts.filter(function (district) {
                 return district.hotdog_stands.length > 0;
             }).map((district: District) => (
-                <li>
+                <li key={district.id}>
                     <button className="button" key={district.id}>
                         {district.district}_{district.district_name}
                     </button>
