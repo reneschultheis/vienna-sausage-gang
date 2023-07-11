@@ -27,7 +27,7 @@ export default function Home() {
                 <div className='flex flex-1 justify-center w-full h-auto relative rounded-md'>
                   <Image
                     alt=''
-                    src="/../public/wienerwurstelstand.jpg"
+                    src="/public/wienerwurstelstand.jpg"
                     width={0}
                     height={0}
                     sizes="100vw"
