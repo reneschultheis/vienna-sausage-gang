@@ -1,29 +1,10 @@
-'use client'
-
-import { useState, useEffect } from "react";
 import { District, HotdogStand } from "./page";
 import PocketBase from 'pocketbase';
 
-export default function District() {
+export default async function District() {
     const pb = new PocketBase('https://vienna-sausage-gang.pockethost.io');
 
-    const [districts, setDistricts] = useState([] as District[])
-    const fetchData = async () => {
-        const response = await pb.collection('districts').getFullList({
-            expand: 'hotdog_stands'
-        }) as District[];
-        return response;
-    }
-
-    useEffect(() => {
-        fetchData()
-            .then((res) => {
-                setDistricts(res);
-            })
-            .catch((e) => {
-                console.log(e.message)
-            })
-    }, [])
+    const districts = await pb.collection('districts').getFullList() as District[];
 
     return (
         <ul className='flex flex-row space-x-2 py-4'>

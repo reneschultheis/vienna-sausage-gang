@@ -91,7 +91,6 @@ export default function Home() {
             <a className="hover:underline">District</a>
           </li>
         </ul>
-        <District />
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 w-full">
           {data.hotdog_stands.map(stand => (
             <a key={stand.name} href="#" className="block md:w-sm p-6 bg-white shadow rounded-lg">
