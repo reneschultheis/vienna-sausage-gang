@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import data from '../../public/data.json';
-import District from './districts';
+import Districts from './districts';
+import HotdogStands from './hotdog_stands';
 import SearchField from './searchfield';
 
 export interface District {
@@ -13,6 +14,10 @@ export interface District {
 export interface HotdogStand {
   id: string;
   name: string;
+  gluten_free_options: boolean;
+  vegan_options: boolean;
+  review: number;
+  location: string;
   district: District;
 }
 
@@ -80,7 +85,10 @@ export default function Home() {
           </div>
         </div>
         <div className="flex w-1/4 px-2">
-          <District /></div>
+          <div className='sticky top-0'>
+          <Districts />
+          </div>
+          </div>
       </div>
       <div className="md:w-3/4 hidden w-screen m-2 sm:m-0">
         <div className="w-full flex justify-center my-10">
