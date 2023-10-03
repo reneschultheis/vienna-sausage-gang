@@ -15,10 +15,10 @@ export default function Footer() {
                         <input type="text" name="email" className="submitform-input"/>
                         <label>Your Message:</label>
                         <input type="text" name="message" className="submitform-input"/>
-                        <button>Send</button>
+                        <button className="bg-vermilion-300 text-whiteanqtique-500 px-2 py-1 rounded-lg w-20">Send</button>
                     </form>
                 </div>
-                <div className="flex flex-1 justify-end text-pastellblue-500">
+                <div className="flex flex-1 justify-end">
                     © René Schultheis & Tiffany Ast-Turner
                 </div>
             </div>

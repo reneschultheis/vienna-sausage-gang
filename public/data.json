@@ -1,61 +1,18 @@
 {
     "hotdog_stands": [
-      {
-        "name": "Wurst Wagon",
-        "location": "Praterstern",
-        "review": 4,
-        "vegan_options": false,
-        "gluten_free_options": true
-      },
-      {
-        "name": "Doghaus Deli",
-        "location": "Stephansplatz",
-        "review": 3.5,
-        "vegan_options": true,
-        "gluten_free_options": true
-      },
-      {
-        "name": "Brat & Bite",
-        "location": "Naschmarkt",
-        "review": 4.5,
-        "vegan_options": false,
-        "gluten_free_options": false
-      },
-      {
-        "name": "The Veggie Dog",
-        "location": "Museumsquartier",
-        "review": 4,
-        "vegan_options": true,
-        "gluten_free_options": true
-      },
-      {
-        "name": "Frankfurter Frenzy",
-        "location": "Karlsplatz",
-        "review": 3,
-        "vegan_options": false,
-        "gluten_free_options": true
-      },
-      {
-        "name": "The Hot Dog Haven",
-        "location": "Rathausplatz",
-        "review": 5,
-        "vegan_options": true,
-        "gluten_free_options": false
-      },
-      {
-        "name": "Sausage Central",
-        "location": "Schönbrunn Palace",
-        "review": 4,
-        "vegan_options": false,
-        "gluten_free_options": false
-      },
-      {
-        "name": "The Gourmet Frank",
-        "location": "Belvedere Palace",
-        "review": 4.5,
-        "vegan_options": true,
-        "gluten_free_options": true
-      }
+        {
+            "name": "Würstelstand Leo",
+            "location": "Nußdorfer Straße",
+            "review": 5,
+            "vegan_options": true,
+            "gluten_free_options": true
+        },
+        {
+            "name": "Wiener Würstelstand",
+            "location": "Pfeilgasse",
+            "review": 4,
+            "vegan_options": true,
+            "gluten_free_options": false
+        }
     ]
-  }
-  
+}

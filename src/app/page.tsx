@@ -22,17 +22,33 @@ export default function Home() {
       <div className="flex flex-col-reverse lg:flex-row w-full py-8">
         <div className="flex w-full lg:w-3/4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 lg:gap-4 w-full p-2 lg:p-4">
-            {data.hotdog_stands.map(stand => (
+            {data.hotdog_stands.map((stand, index) => (
               <a key={stand.name} href="#" className="block p-4 w-full bg-vermilion-100 shadow-lg rounded-lg">
                 <div className='flex flex-1 justify-center w-full h-auto relative rounded-md'>
-                  <Image
+                {index === 0 && <Image
+                    alt=''
+                    src="/wurstelstandleo.jpg"
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    className='w-full max-h-44 rounded-md object-cover'
+                  />}
+                  {index === 1 && <Image
                     alt=''
                     src="/wienerwurstelstand.jpg"
                     width={0}
                     height={0}
                     sizes="100vw"
                     className='w-full max-h-44 rounded-md object-cover'
-                  />
+                  />}
+                  {index === 2 && <Image
+                    alt=''
+                    src="/klassehasse.jpeg"
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    className='w-full max-h-44 rounded-md object-cover'
+                  />}
                 </div>
                 <div className='my-4'>
                   <div className="flex flex-row space-x-2 mt-4">
